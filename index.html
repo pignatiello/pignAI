@@ -13,29 +13,29 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <style>
+    /* Media query per schermi piccoli (come gli iPhone) */
+    @media (max-width: 640px) {
+      .responsive-img {
+        height: 50vh; /* Altezza ridotta per schermi piccoli */
+      }
+    }
+  </style>
 </head>
 <body class="bg-white">
 
   <header class="py-4 bg-white shadow-md">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-medium text-gray-800">Pigna <span style="color: rgb(246, 102, 64);">AI</span></h1>
-      <!-- <ul class="flex space-x-4">
-        <li><a href="#" class="hover:text-gray-600 text-gray-800">About</a></li>
-        <li><a href="#" class="hover:text-gray-600 text-gray-800">Projects</a></li>
-        <li><a href="#" class="hover:text-gray-600 text-gray-800">Contact</a></li>
-      </ul> -->
     </div>
   </header>
 
   <main class="container mx-auto py-4">
-    <!-- <h2 class="text-4xl font-medium text-gray-600 mb-4">Explore My Projects</h2>-->
-        <p class="text-lg text-gray-300 mb-4">ML and AI</p>
-    <div class="w-full h-screen relative">
-      <img src="pinecone.jpg" alt="Pine Cone" class="w-full h-full object-cover absolute inset-0">
+    <p class="text-lg text-gray-300 mb-4">ML and AI</p>
+    <div class="w-full h-screen relative responsive-img">
+      <img src="pinecone.jpg" alt="Pine Cone" class="w-full h-full object-cover absolute inset-0 responsive-img">
       <div class="absolute inset-0 bg-black opacity-10"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-      <!-- <h2 class="text-4xl font-medium text-white mb-4">Explore My Projects</h2>
-        <p class="text-lg text-gray-300 mb-8">Each piece of the pinecone represents a different project. Click to learn more.</p> -->
       </div>
     </div>
 
@@ -60,9 +60,8 @@
   </main>
 
   <footer class="py-4 bg-white shadow-md text-gray-600 text-center">
-    <p>&copy; 2023 Your Name</p>
+    <p>&copy; 2024 PignAI</p>
   </footer>
-
 
 </body>
 </html>
