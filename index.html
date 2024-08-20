@@ -21,6 +21,46 @@
         height: 50vh; /* Altezza ridotta per schermi piccoli */
       }
     }
+
+    /* Stile per il lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    /* Stile per il pulsante di chiusura */
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      /*background-color: #fff;*/
+      color: #000;
+      font-size: 24px;
+      padding: 5px 10px;
+      /*border-radius: 50%;*/
+      cursor: pointer;
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body class="bg-white">
@@ -41,6 +81,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+      <!-- AI Control Room Section -->
       <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
         <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleVideo('videoContainer1', 'arrow1')">
           AI Control Room
@@ -54,14 +95,38 @@
           </video>
         </div>
       </div>
-      
-     
+
+      <!-- Test Section -->
+      <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
+        <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleImages('imageContainer1', 'arrow2')">
+          e-distribuzione Analytics
+          <span id="arrow2" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
+        </h3>
+        <p class="text-gray-600">Enel fault monitoring</p>
+        <div id="imageContainer1" class="mt-4 hidden">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#lightbox1"><img src="image/e-analytics_1.jpg" alt="e-analytics_1" class="w-full h-auto rounded-lg shadow-md"></a>
+            <a href="#lightbox2"><img src="image/e-analytics_2.jpg" alt="e-analytics_2" class="w-full h-auto rounded-lg shadow-md"></a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
   <footer class="py-4 bg-white shadow-md text-gray-600 text-center">
     <p>&copy; 2024 Pigna AI</p>
   </footer>
+
+  <!-- Lightbox Elements -->
+  <div id="lightbox1" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="image/e-analytics_1.jpg" alt="e-analytics_1">
+  </div>
+
+  <div id="lightbox2" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="image/e-analytics_2.jpg" alt="e-analytics_2">
+  </div>
 
   <script>
     function toggleVideo(containerId, arrowId) {
@@ -72,6 +137,18 @@
         arrow.innerHTML = 'expand_less';
       } else {
         videoContainer.classList.add('hidden');
+        arrow.innerHTML = 'expand_more';
+      }
+    }
+
+    function toggleImages(containerId, arrowId) {
+      const imageContainer = document.getElementById(containerId);
+      const arrow = document.getElementById(arrowId);
+      if (imageContainer.classList.contains('hidden')) {
+        imageContainer.classList.remove('hidden');
+        arrow.innerHTML = 'expand_less';
+      } else {
+        imageContainer.classList.add('hidden');
         arrow.innerHTML = 'expand_more';
       }
     }
