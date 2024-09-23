@@ -22,6 +22,26 @@
       }
     }
 
+   /* Stile per il pulsante Contact Me */
+   .contact-btn {
+      background-color: white;
+      color: black;
+      padding: 6px 12px; /* Ridotto il padding per renderlo più piccolo */
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.875rem; /* Reso il testo più piccolo */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: rgb(246, 102, 64);
+      color: white;
+    }
+
+    .contact-btn:focus {
+      outline: none;
+    }
+
     /* Stile per il lightbox */
     .lightbox {
       position: fixed;
@@ -52,11 +72,9 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      /*background-color: #fff;*/
       color: #000;
       font-size: 24px;
       padding: 5px 10px;
-      /*border-radius: 50%;*/
       cursor: pointer;
       text-decoration: none;
     }
@@ -68,11 +86,14 @@
   <header class="py-4 bg-white shadow-md">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-medium text-gray-800">Pigna <span style="color: rgb(246, 102, 64);">AI</span></h1>
+      <!-- Pulsante Contact Me nell'header a destra -->
+      <a href="#footer" class="contact-btn">Contact Me</a>
     </div>
   </header>
 
   <main class="container mx-auto py-4">
     <p class="text-lg text-gray-300 mb-4">Projects</p>
+
     <div class="w-full h-screen relative responsive-img">
       <img src="pinecone.jpg" alt="Pine Cone" class="w-full h-full object-cover absolute inset-0 responsive-img">
       <div class="absolute inset-0 bg-black opacity-10"></div>
@@ -142,15 +163,14 @@
         </div>
       </div>
 
-      
-
-
-
     </div>
   </main>
 
-  <footer class="py-4 bg-white shadow-md text-gray-600 text-center">
+  <footer id="footer" class="py-4 bg-white shadow-md text-gray-800 text-center">
     <p>&copy; 2024 Pigna AI</p>
+    <p>Telefono: <a href="tel:+391234567890" class="text-gray-800 hover:text-blue-500">+39 123 456 7890</a> | 
+    Email: <a href="mailto:info@pignaai.com" class="text-gray-800 hover:text-blue-500">info@pignaai.com</a> | 
+    <a href="https://linkedin.com/in/pignaai" target="_blank" class="text-gray-800 hover:text-blue-500">LinkedIn</a></p>
   </footer>
 
   <!-- Lightbox Elements -->
