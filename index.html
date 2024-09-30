@@ -78,6 +78,15 @@
       cursor: pointer;
       text-decoration: none;
     }
+    .highlight-video {
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+    transition: box-shadow 0.3s ease;
+  }
+  .highlight-video:hover {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 1);
+}
+
 
   </style>
 </head>
@@ -105,15 +114,25 @@
       <!-- AI Control Room Section -->
       <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
         <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleVideo('videoContainer1', 'arrow1')">
-          AI Control Room
+          AI Control Room - 1.1.0 <span class="ml-2 px-2 py-1 bg-green-500 text-white text-sm rounded-full">New feacture</span>
           <span id="arrow1" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
         </h3>
+        
         <p class="text-gray-600">Monitoring of energy production plants</p>
         <div id="videoContainer1" class="mt-4 hidden">
           <video width="100%" controls>
             <source src="ai_cr.mov" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+          <!-- Second Video (added directly below the first one) -->
+          <br><br>
+          <p class="text-gray-600">Support for control room technicians in interpreting machine statuses</p>
+          
+          <video width="100%" controls class="mt-4 highlight-video">
+            <source src="ai_cr_1_1_0.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          
         </div>
       </div>
 
