@@ -1,2 +1,2 @@
-# pignAI.github.io
-#pinecone 71%
+pignAI.github.io
+
