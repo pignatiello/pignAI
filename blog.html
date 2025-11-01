@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Control Room – Visione Panoramica</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="py-4 bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="flex items-center no-underline">
+        <h1 class="text-2xl font-medium text-gray-900 hover:text-orange-500 transition">
+          Pigna <span style="color: rgb(246, 102, 64);">AI</span>
+        </h1>
+      </a>
+
+      <button id="focusToggle" class="contact-btn">
+        🎯 Attiva Focus Mode
+      </button>
+    </div>
+  </header>
+
+
+  <!-- CONTENUTO -->
+  <article>
+    <h1>Perché stiamo costruendo <span style="color: rgb(246, 102, 64);">AI</span> Control Room</h1>
+    <p class="meta">Pubblicato il 30 ottobre 2025 • di Pigna AI</p>
+
+    <h2>Un nuovo modo di monitorare gli impianti</h2>
+    <p>AI Control Room nasce dall’esigenza di monitorare in modo semplice e immediato uno o più impianti.</p>
+    <p>Che si tratti di impianti rinnovabili — come turbine eoliche, centrali idroelettriche o impianti fotovoltaici — o
+      di impianti industriali.</p>
+
+    <h2>Superare la complessità tecnica</h2>
+    <p>Vogliamo eliminare la complessità dei sistemi di supervisione, rendendo accessibili le informazioni anche a chi
+      non ha competenze tecniche.</p>
+    <p>I sistemi SCADA sono potenti ma pensati per specialisti, e spesso poco intuitivi per gli utenti non tecnici.</p>
+
+    <h2>Collaborare, non sostituire</h2>
+    <p>Non intendiamo sostituire i sistemi SCADA. Abbiamo esperienza nel loro sviluppo e conosciamo il loro valore.</p>
+    <p>Vogliamo potenziarli con una dimensione più chiara e collaborativa, rendendo l’esperienza di supervisione meno
+      tecnica e più comprensibile per tutti.</p>
+
+    <h2>Gestione integrata degli impianti</h2>
+    <p>Con AI Control Room vogliamo creare un ambiente unico dove monitoraggio, documenti, contatti e dati convivono in
+      modo chiaro, ordinato e accessibile.</p>
+  </article>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Pigna AI</p>
+    <p>Email: <a href="mailto:info@pigna-ai.com" class="text-orange-500 hover:underline">info@pigna-ai.com</a></p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const btn = document.getElementById('focusToggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('focus-mode');
+      btn.classList.toggle('active');
+      btn.textContent = document.body.classList.contains('focus-mode')
+        ? '🌤️ Torna alla Visione Panoramica'
+        : '🎯 Attiva Focus Mode';
+    });
+  </script>
+</body>
+
+</html>

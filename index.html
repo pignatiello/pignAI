@@ -1,337 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pigna AI</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  
-  <style>
-    /* Media query per schermi piccoli (come gli iPhone) */
-    @media (max-width: 640px) {
-      .responsive-img {
-        height: 50vh; /* Altezza ridotta per schermi piccoli */
-      }
-    }
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-   /* Stile per il pulsante Contact Me */
-   .contact-btn {
-      background-color: white;
-      color: black;
-      padding: 6px 12px; /* Ridotto il padding per renderlo più piccolo */
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 0.875rem; /* Reso il testo più piccolo */
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .contact-btn:hover {
-      background-color: rgb(246, 102, 64);
-      color: white;
-    }
-
-    .contact-btn:focus {
-      outline: none;
-    }
-
-    /* Stile per il lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      display: none;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-
-    .lightbox:target {
-      display: flex;
-    }
-
-    /* Stile per il pulsante di chiusura */
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: #000;
-      font-size: 24px;
-      padding: 5px 10px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .highlight-video {
-    border: 2px solid rgba(246, 102, 64);
-    box-shadow: 0 0 10px rgb(221, 120, 92);
-    transition: box-shadow 0.3s ease;
-  }
-  .highlight-video:hover {
-  box-shadow: 0 0 20px rgb(221, 120, 92);
-}
-ul {
-            list-style-type: none; /* Remove default bullets */
-            padding: 0; /* Remove padding */
-        }
-        li::before {
-            content: '•'; /* Custom bullet */
-            color: black; /* Color of the bullet */
-            font-size: 20px; /* Size of the bullet */
-            margin-right: 10px; /* Space between bullet and text */
-        }
-
-
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
-<body class="bg-white">
 
-  <header class="py-4 bg-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-medium text-gray-800">Pigna <span style="color: rgb(246, 102, 64);">AI</span></h1>
-      <!-- Pulsante Contact Me nell'header a destra -->
-      <a href="#footer" class="contact-btn">Contact Me</a>
-    </div>
-  </header>
+<body class="min-h-screen flex flex-col">
 
-  <main class="container mx-auto">
-    <p class="text-lg text-gray-600 mb-4">AI for Industry</p>
-<!--
-    <div class="w-full h-screen relative responsive-img">
-      <img src="pinecone.jpg" alt="Pine Cone" class="w-full h-full object-cover absolute inset-0 responsive-img">
-      <div class="absolute inset-0 bg-black opacity-10"></div>
-      <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+  </head>
+
+  <body class="bg-white text-gray-800">
+
+    <header class="py-4 bg-white shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-medium text-gray-800">Pigna <span style="color: rgb(246, 102, 64);">AI</span></h1>
+
+        <nav class="flex items-center gap-6">
+          <a href="blog.html" class="text-gray-800 hover:text-red-500 font-medium">Blog</a>
+        </nav>
       </div>
-    </div>
+    </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
-      <!-- AI Control Room Section 
-      <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
-        <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleVideo('videoContainer1', 'arrow1')">AI Control Room<span class="ml-2 px-2 py-1" style="background-color: rgba(246, 102, 64); color: white; font-size: 0.875rem; border-radius: 9999px;">
-New
-        </span>
-          <span id="arrow1" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
-        </h3>
-        
-        <!-- 1.0.0 
-        <p class="text-gray-600">AI Agent for Renewable Energy Systems</p>
-        <p class="text-gray-600">
-          <!--<a href="https://aicontrolroom.pigna-ai.com" target="_blank" style="color: #007bff; font-weight: bold; text-decoration: underline;">aicontrolroom.pigna-ai.com</a>
+    <!-- MAIN -->
+    <main class="flex-grow flex flex-col justify-center items-center text-center py-16 px-6">
+      <!-- Immagine -->
+      <img src="home.png" alt="Schema perceptron" class="max-w-full md:max-w-3xl rounded-lg shadow-lg mb-8">
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="py-6 bg-white text-gray-700 border-t">
+      <div class="container mx-auto flex flex-col items-center justify-center text-center space-y-1">
+        <p>&copy; 2024 Pigna AI</p>
+        <p>
+          Email:
+          <a href="mailto:info@pigna-ai.com" class="text-orange-500 hover:underline">
+            info@pigna-ai.com
+          </a>
         </p>
-       
-        
-        <div id="videoContainer1" class="mt-4 hidden">
-          <video width="100%" controls>
-            <source src="ai_cr.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <!-- 1.1.0 
-          <br><br>
-          <p class="text-gray-600"><strong>1.1.0</strong></p>
-            <ul>
-              <li>Support to control room technicians in interpreting machine states</li>
-            </ul>
-            
-          <video width="100%" controls class="mt-4">
-            <source src="ai_cr_1_1_0.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-         
-          <!-- 1.2.0  
-          <br><br>
-          <p><strong>1.2.0</strong></p>
-          <ul>
-              <li><strong>Telegram Integration</strong><br>Now you can interact with AI ControlRoom directly on Telegram.</li>
-              <li><strong>Voice Messaging</strong><br>Easily communicate using the voice message feature.</li>
-          </ul>
-      
-          <video width="100%" controls class="mt-4 video">
-            <source src="ai_cr_1_2_0.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <!-- 1.3.0  
-          <br><br>
-          <p><strong>1.3.0</strong></p>
-          <ul>
-              <li><strong>Notification</strong><br>AI ControlRoom sends you a notification regarding the state of the system if a problem occurs and provides updates once the issue is resolved.</li>
-        
-          </ul>
-      
-          <video width="100%" controls class="mt-4 video">
-            <source src="ai_cr_1_3_0.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <!-- 2.0.0  
-          <br><br>
-          <p><strong>2.0.0</strong></p>
-          <ul>
-              <li><strong>AI CR diventa App</strong><br>AI ControlRoom AI becomes an app.</li>
-        
-          </ul>
-      
-          <video width="100%" controls class="mt-4 highlight-video">
-            <source src="ai_cr_app.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          
-        </div>
       </div>
-
-<!-- Test Section 
-<div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
-  <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleImages('imageContainer1', 'arrow2')">
-    <span>Electrical fault analysis</span>
-    </a>
-    <span id="arrow2" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
-  </h3>
-
-  <p class="text-gray-600">Analysis of electrical faults on Italian MV and LV power lines</p>
-  <div id="imageContainer1" class="mt-4 hidden">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <a href="#lightbox1"><img src="image/guasti_app.png" alt="guasti-app" class="w-full h-auto rounded-lg shadow-md"></a>
-      <!-- <a href="#lightbox2"><img src="image/power-line-faults-Italy-2.jpg" alt="power-line-faults-Italy-2" class="w-full h-auto rounded-lg shadow-md"></a> 
-    </div>
-  </div>
-</div>
+    </footer>
 
 
+  </body>
 
-
-      <!-- Sentiment Analysis 
-      <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
-        <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleVideo('videoContainer2', 'arrow3')">
-          Sentiment Analysis
-          <span id="arrow2" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
-        </h3>
-        <p class="text-gray-600">The model determine whether a given text contains negative or positive emotions</p>
-        <div id="videoContainer2" class="mt-4 hidden">
-          <video width="100%" controls>
-            <source src="sentiment_analysis.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-
-      <!-- bike_booking_prediction 
-      <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
-        <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleVideo('videoContainer3', 'arrow4')">
-          Bike booking prediction
-          <span id="arrow2" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
-        </h3>
-        <p class="text-gray-600">The model predicts the number of bicycle booking</p>
-        <div id="videoContainer3" class="mt-4 hidden">
-          <video width="100%" controls>
-            <source src="bike_booking_prediction.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-
-      <!-- Performance analysis of photovoltaic systems 
-      <div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
-        <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer" onclick="toggleVideo('videoContainer4', 'arrow5')">
-          Performance analysis
-          <span id="arrow2" class="ml-2 transform transition duration-300 ease-in-out material-icons">expand_more</span>
-        </h3>
-        <p class="text-gray-600">Performance analysis of photovoltaic systems</p>
-        <div id="videoContainer4" class="mt-4 hidden">
-          <video width="100%" controls>
-            <source src="pa_ph.mov" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-  <!-- comic 
-  <!-- comic  
-<div class="bg-white rounded-lg shadow-md p-6 transform hover:shadow-lg transition duration-300 ease-in-out">
-  <h3 class="text-xl font-medium text-gray-800 mb-2 flex justify-between items-center cursor-pointer">
-    Comic Book "Reti Neuruali"
-  </h3>
-
-  <a 
-    href="https://github.com/pignatiello/book/raw/8122d164ef907639a8e597dc6974549714dd1b09/Alla%20scoperta%20del%20Cervello%20Digitale.pdf" 
-    class="mt-4 inline-block text-blue-600 hover:underline" 
-    target="_blank" 
-    download
-  >
-     Scarica il PDF "01 - Alla scoperta del Cervello Digitale"
-  </a>
-</div>
-
-
-
-
-
-  </div> 
-
-    </div>
-  </main>  -->
-  
-  <footer id="footer" class="py-4 bg-white shadow-md text-gray-800 text-center">
-    <p>&copy; 2024 Pigna AI</p>
- <!--   <p>Telefono: <a href="tel:+39 3485409351" class="text-gray-800 hover:text-blue-500">+39 3485409351</a> | -->
-    Email: <a href="mailto:info@pigna-ai.com" class="text-gray-800 hover:text-blue-500">info@pigna-ai.com</a> | 
- <!--    <a href="https://linkedin.com/in/gerardo-pignatiello" target="_blank" class="text-gray-800 hover:text-blue-500">LinkedIn</a></p>
-    <a href="https://linkedin.com/in/gerardo-pignatiello" target="_blank" class="text-gray-800 hover:text-blue-500">X.com</a></p> -->
-  </footer>
-
-  <!-- Lightbox Elements 
-  <div id="lightbox1" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="image/guasti_app.png" alt="image/guasti-app">
-  </div>
-
- <!-- <div id="lightbox2" class="lightbox">
-    <a href="#" class="close">&times;</a>
-    <img src="image/power-line-faults-Italy-2.jpg" alt="image/power-line-faults-Italy-2">
-  </div>
-
-  <script>
-    function toggleVideo(containerId, arrowId) {
-      const videoContainer = document.getElementById(containerId);
-      const arrow = document.getElementById(arrowId);
-      if (videoContainer.classList.contains('hidden')) {
-        videoContainer.classList.remove('hidden');
-        arrow.innerHTML = 'expand_less';
-      } else {
-        videoContainer.classList.add('hidden');
-        arrow.innerHTML = 'expand_more';
-      }
-    }
-
-    function toggleImages(containerId, arrowId) {
-      const imageContainer = document.getElementById(containerId);
-      const arrow = document.getElementById(arrowId);
-      if (imageContainer.classList.contains('hidden')) {
-        imageContainer.classList.remove('hidden');
-        arrow.innerHTML = 'expand_less';
-      } else {
-        imageContainer.classList.add('hidden');
-        arrow.innerHTML = 'expand_more';
-      }
-    }
-  </script>-->
-</body>
 </html>

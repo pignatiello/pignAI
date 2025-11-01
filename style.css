@@ -1,0 +1,164 @@
+/* === STRUTTURA GENERALE === */
+body {
+  font-family: "Inter", "Arial", sans-serif;
+  background-color: #fffdf8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  text-align: left;
+  overflow: hidden; /* niente scroll */
+  line-height: 1.7;
+}
+body {
+  overflow-y: auto; /* consente lo scroll verticale */
+}
+
+/* === HEADER & FOOTER === */
+header,
+footer {
+  width: 100%;
+  text-align: center;
+  background: #fff;
+}
+
+header {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* === ARTICOLO === */
+article {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  padding: 1.8rem;
+  max-width: 780px;
+  width: 90%;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 1.7rem;
+  color: #1f2937;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+h2 {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+p {
+  font-size: 0.9rem;
+  margin-bottom: 0.45rem;
+  max-width: 70ch;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+/* === BOTTONE FOCUS === */
+.focus-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background-color: #f66740;
+  color: white;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.focus-toggle:hover {
+  background-color: #e0522d;
+}
+
+.focus-toggle:active {
+  transform: scale(0.96);
+}
+
+/* === STATO ATTIVO (Focus Mode) === */
+.focus-toggle.active {
+  background-color: #1f2937;
+  color: #fff9e6;
+}
+
+/* === MODALITÀ FOCUS === */
+body.focus-mode article p {
+  opacity: 0.35;
+  filter: blur(1px);
+  transition: all 0.2s ease;
+}
+
+body.focus-mode article p:hover {
+  opacity: 1;
+  filter: blur(0);
+  background-color: #fff8e6;
+  border-radius: 6px;
+  padding: 0.1rem 0.3rem;
+}
+
+footer {
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 0.75rem 0;
+  color: #6b7280;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+}
+
+footer a {
+  color: rgb(246, 102, 64);
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #e0522d;
+}
+
+
+/* === RESPONSIVE === */
+@media (max-height: 800px) {
+  article {
+    padding: 1.2rem;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
