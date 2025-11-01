@@ -57,7 +57,7 @@ article {
 }
 
 article + article {
-  margin-top: 0rem; /* spazio uniforme solo tra articoli */
+  margin-top: 1rem; /* spazio uniforme solo tra articoli */
 }
 
 h1 {
